@@ -1,0 +1,16 @@
+plugins{
+    id 'java'
+}
+dependencies {
+
+    implementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+    implementation project(":di")
+    implementation project(":network")
+    implementation 'com.opencsv:opencsv:5.6'
+    implementation 'org.reflections:reflections:0.9.11'
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+}
+test{
+    useJUnitPlatform()
+}

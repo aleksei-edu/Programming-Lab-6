@@ -1,0 +1,9 @@
+
+rootProject.name = 'Sem2Proga'
+include 'server'
+include 'client'
+include 'common'
+include 'di'
+include 'testing'
+include 'network'
+

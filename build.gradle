@@ -1,0 +1,31 @@
+plugins{
+    id 'java'
+}
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+    group  'com.lapin'
+    version '1.0'
+}
+
+subprojects {
+    apply plugin: 'java'
+    repositories {
+        mavenCentral()
+    }
+    apply from: "$rootProject.projectDir/dependencies.gradle"
+    dependencies {
+        implementation libs.slf4j_api
+        implementation libs.slf4j_jdk14
+        implementation libs.logback
+        implementation libs.reflections
+        compileOnly libs.lombok
+        annotationProcessor libs.lombok
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    }
+    test {
+        useJUnitPlatform()
+    }
+}
